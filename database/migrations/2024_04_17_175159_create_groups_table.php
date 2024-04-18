@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('name')->primary();
             $table->date('founded_date')->index();
             $table->integer('num_members')->unsigned();
-            $table->string('genre');
-            $table->foreign('genre')->references('name')->on('genres')->onDelete('cascade');
+            $table->string('genre_name');
+            $table->foreign('genre_name ')->references('name')->on('genres')->onDelete('cascade');
         });
     }
 

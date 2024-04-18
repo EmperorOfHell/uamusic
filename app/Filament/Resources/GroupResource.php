@@ -35,7 +35,7 @@ class GroupResource extends Resource
                     ->name('Number of Members')
                     ->required()
                     ->numeric(),
-                Forms\Components\Select::make('genre')
+                Forms\Components\Select::make('genre_name')
                     ->relationship(name: 'genre', titleAttribute: 'name')
                     ->required()
             ]);
@@ -53,7 +53,7 @@ class GroupResource extends Resource
                 Tables\Columns\TextColumn::make('num_members')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('genre')
+                Tables\Columns\TextColumn::make('genre_name')
                     ->searchable(),
             ])
             ->filters([
