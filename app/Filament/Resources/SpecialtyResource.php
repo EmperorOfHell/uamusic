@@ -19,6 +19,8 @@ class SpecialtyResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $cluster = \App\Filament\Clusters\Artists::class;
+
     public static function form(Form $form): Form
     {
         return $form

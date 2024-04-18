@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Clusters\Music;
 use App\Filament\Resources\GenreResource\Pages;
 use App\Filament\Resources\GenreResource\RelationManagers;
 use App\Models\Genre;
@@ -18,6 +19,7 @@ class GenreResource extends Resource
     protected static ?string $model = Genre::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $cluster = Music::class;
 
     public static function form(Form $form): Form
     {

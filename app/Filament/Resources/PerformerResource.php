@@ -20,6 +20,8 @@ class PerformerResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $cluster = \App\Filament\Clusters\Artists::class;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -38,7 +40,7 @@ class PerformerResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Select::make('education')
                     ->relationship('education', 'diploma_number')
-                    ->getOptionLabelFromRecordUsing(fn (Education $record) => "{$record->diploma_number} {$record->degree} {$record->specialty->name}"),
+                    ->getOptionLabelFromRecordUsing(fn(Education $record) => "{$record->diploma_number} {$record->degree} {$record->specialty->name}"),
             ]);
     }
 

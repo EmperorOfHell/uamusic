@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Clusters\Perfomance;
 use App\Filament\Resources\MerchandiseResource\Pages;
 use App\Filament\Resources\MerchandiseResource\RelationManagers;
 use App\Models\Merchandise;
@@ -18,6 +19,8 @@ class MerchandiseResource extends Resource
     protected static ?string $model = Merchandise::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $cluster = Perfomance::class;
 
     public static function form(Form $form): Form
     {
