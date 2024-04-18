@@ -22,5 +22,10 @@ class Concert extends FilamentModel
         return $this->belongsTo(City::class, 'city_name');
     }
 
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
 }
 

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Group extends FilamentModel
@@ -11,8 +13,22 @@ class Group extends FilamentModel
     use HasFactory;
     protected $primaryKey = 'name';
 
-    public function genre(): HasOne
+    public function genre(): BelongsTo
     {
-        return $this->hasOne(Genre::class, 'id', 'genre_id');
+        return $this->belongsTo(Genre::class, 'genre_name' );
+    }
+    public function performers(): HasMany
+    {
+        return $this->hasMany(Performer::class);
+    }
+
+    public function songs()
+    {
+        return $this->hasManyThrough(Song::class, Album::class, );
+    }
+
+    public function tours(): HasMany
+    {
+        return $this->hasMany(Tour::class);
     }
 }

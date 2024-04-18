@@ -56,7 +56,7 @@ class PerformerResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('birth_country')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('education')
+                Tables\Columns\TextColumn::make('education_number')
                     ->sortable(),
             ])
             ->filters([

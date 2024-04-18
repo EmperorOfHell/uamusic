@@ -15,4 +15,6 @@ class Merchandise extends FilamentModel
     {
         return $this->belongsTo(Tour::class, 'tour_name');
     }
+
+
 }
