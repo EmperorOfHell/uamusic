@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('group_name')->index();
             $table->string('role_in_group');
             $table->string('birth_country');
-            $table->bigInteger('education')->nullable();
+            $table->bigInteger('education_number')->nullable();
             $table->foreign('group_name')->references('name')->on('groups')->onDelete('cascade');
-            $table->foreign('education')->references('diploma_number')->on('educations')->onDelete('set null');
+            $table->foreign('education_number')->references('diploma_number')->on('educations')->onDelete('set null');
         });
     }
 

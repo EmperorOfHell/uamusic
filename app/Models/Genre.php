@@ -11,4 +11,9 @@ class Genre extends FilamentModel
     use HasFactory;
 
     protected $primaryKey = 'name';
+
+    public function albums()
+    {
+        return $this->hasManyThrough(Album::class, Group::class, 'genre_name', 'group_name');
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Clusters\Music;
 use App\Filament\Resources\GroupResource\Pages;
 use App\Filament\Resources\GroupResource\RelationManagers;
 use App\Models\Group;
@@ -18,6 +19,7 @@ class GroupResource extends Resource
     protected static ?string $model = Group::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $cluster = Music::class;
 
     public static function form(Form $form): Form
     {
@@ -33,7 +35,7 @@ class GroupResource extends Resource
                     ->name('Number of Members')
                     ->required()
                     ->numeric(),
-                Forms\Components\Select::make('genre')
+                Forms\Components\Select::make('genre_name')
                     ->relationship(name: 'genre', titleAttribute: 'name')
                     ->required()
             ]);
@@ -51,7 +53,7 @@ class GroupResource extends Resource
                 Tables\Columns\TextColumn::make('num_members')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('genre')
+                Tables\Columns\TextColumn::make('genre_name')
                     ->searchable(),
             ])
             ->filters([

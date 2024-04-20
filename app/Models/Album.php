@@ -22,4 +22,8 @@ class Album extends FilamentModel
     {
         return $this->belongsTo(AlbumType::class, 'num_of_songs');
     }
+
+    public function songs(): HasMany{
+        return $this->hasMany(Song::class, 'album_name');
+    }
 }

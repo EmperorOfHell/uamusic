@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Clusters\Music;
 use App\Filament\Resources\AlbumResource\Pages;
 use App\Filament\Resources\AlbumResource\RelationManagers;
 use App\Models\Album;
@@ -18,6 +19,8 @@ class AlbumResource extends Resource
     protected static ?string $model = Album::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $cluster = Music::class;
+
 
     public static function form(Form $form): Form
     {

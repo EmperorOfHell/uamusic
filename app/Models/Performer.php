@@ -19,8 +19,9 @@ class Performer extends FilamentModel
         return $this->belongsTo(Group::class, 'group_name');
     }
 
-    public function education(): HasOne
+    public function education(): BelongsTo
     {
-        return $this->hasOne(Education::class, 'education');
+        return $this->belongsTo(Education::class, 'education_number');
     }
+
 }
